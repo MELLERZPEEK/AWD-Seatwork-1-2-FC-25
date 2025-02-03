@@ -9,18 +9,18 @@
     <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+  <h3 align="center">CAR RENTAL</h3>
 </div>
 <!-- TODO: Make a short description -->
 <div align="center">
-  Short Description. (Optional)
+A car rental system is a software application that allows users to reserve, rent, and manage vehicles for short-term use, typically involving features like booking, payment processing, vehicle availability tracking, and rental agreements.
 </div>
 
 <br />
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://visit-counter.vercel.app/counter.png?page=MELLERZPEEK/AWD-Seatwork-1-2-FC-25)
 
 [![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
 
