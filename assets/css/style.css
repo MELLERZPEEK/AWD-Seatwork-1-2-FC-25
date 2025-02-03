@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #f0f4f8;
-    color: #333;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,11 +15,12 @@ body {
     min-height: 100vh;
 }
 
+
 header {
     text-align: center;
     margin-top: 30px;
     font-size: 2rem;
-    color: #2d3e50;
+    color: #f8f9fa;
 }
 
 
@@ -42,18 +43,19 @@ main {
 }
 
 .car {
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     overflow: hidden;
     text-align: center;
+    color: #333;
 }
 
 .car:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 .car img {
@@ -66,24 +68,25 @@ main {
 .car h3 {
     margin-top: 15px;
     font-size: 1.4rem;
-    color: #2d3e50;
+    color: #1e3c72;
 }
 
 .car p {
     margin-top: 10px;
     font-size: 1rem;
-    color: #777;
+    color: #555;
 }
 
 .car .price {
     margin-top: 10px;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #2d3e50;
+    color: #1e3c72;
 }
 
+
 button {
-    background: #007bff;
+    background: #ff9800;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -95,7 +98,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #e68900;
 }
 
 
@@ -107,20 +110,20 @@ button:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     overflow-y: auto;
     align-items: center;
     justify-content: center;
 }
 
 .modal-content {
-    background: #fff;
+    background: #2a5298;
     padding: 30px;
     width: 400px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    color: #333;
+    color: white;
     position: relative;
 }
 
@@ -136,7 +139,7 @@ button:hover {
     top: 15px;
     right: 15px;
     font-size: 1.5rem;
-    color: #333;
+    color: white;
     cursor: pointer;
 }
 
@@ -155,7 +158,7 @@ form input {
 }
 
 form input:focus {
-    border-color: #007bff;
+    border-color: #ff9800;
 }
 
 form button {
@@ -178,12 +181,12 @@ form button:hover {
 }
 
 #rented-message h3 {
-    color: #28a745;
+    color: #ff9800;
     font-size: 1.5rem;
 }
 
 #rented-message p {
-    color: #555;
+    color: #ddd;
     font-size: 1.1rem;
     margin-top: 10px;
 }
