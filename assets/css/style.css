@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +22,7 @@ header {
     color: #2d3e50;
 }
 
-/* Main Section */
+
 main {
     width: 100%;
     display: flex;
@@ -33,7 +32,7 @@ main {
     margin-top: 40px;
 }
 
-/* Car List */
+
 #car-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -99,7 +98,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Modal Styling */
+
 .modal {
     display: none;
     position: fixed;
