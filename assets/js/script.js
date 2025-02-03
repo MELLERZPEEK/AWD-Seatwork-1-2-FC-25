@@ -1,15 +1,15 @@
 // Car data with image URLs and rental prices
 const cars = [
-    { id: 1, name: "Toyota Corolla", image: "assets/img/toyota.jpg", price: "₱3,000/day", status: "Available" },
-    { id: 2, name: "Honda Civic", image: "assets/img/honda.jpg", price: "₱3,500/day", status: "Available" },
-    { id: 3, name: "Ford Focus", image: "assets/img/ford.jpg", price: "₱2,800/day", status: "Available" },
-    { id: 4, name: "Tesla Model 3", image: "assets/img/tesla.jpg", price: "₱6,000/day", status: "Available" },
-    { id: 5, name: "Nissan Altima", image: "assets/img/nissan.jpg", price: "₱3,200/day", status: "Available" },
-    { id: 6, name: "BMW 3 Series", image: "assets/img/bmw.jpg", price: "₱5,500/day", status: "Available" },
-    { id: 7, name: "Mercedes-Benz C-Class", image: "assets/img/mercedes.jpg", price: "₱6,500/day", status: "Available" },
-    { id: 8, name: "Hyundai Elantra", image: "assets/img/hundai.jpg", price: "₱2,900/day", status: "Available" },
-    { id: 9, name: "Chevrolet Malibu", image: "assets/img/chevrolet.jpg", price: "₱3,300/day", status: "Available" },
-    { id: 10, name: "Audi A4", image: "assets/img/audi.jpg", price: "₱7,000/day", status: "Available" }
+    { id: 1, name: "Toyota Corolla", image: "images/toyota.jpg", price: "₱3,000/day", status: "Available" },
+    { id: 2, name: "Honda Civic", image: "images/honda.jpg", price: "₱3,500/day", status: "Available" },
+    { id: 3, name: "Ford Focus", image: "images/ford.jpg", price: "₱2,800/day", status: "Available" },
+    { id: 4, name: "Tesla Model 3", image: "images/tesla.jpg", price: "₱6,000/day", status: "Available" },
+    { id: 5, name: "Nissan Altima", image: "images/nissan.jpg", price: "₱3,200/day", status: "Available" },
+    { id: 6, name: "BMW 3 Series", image: "images/bmw.jpg", price: "₱5,500/day", status: "Available" },
+    { id: 7, name: "Mercedes-Benz C-Class", image: "images/mercedes.jpg", price: "₱6,500/day", status: "Available" },
+    { id: 8, name: "Hyundai Elantra", image: "images/hundai.jpg", price: "₱2,900/day", status: "Available" },
+    { id: 9, name: "Chevrolet Malibu", image: "images/chevrolet.jpg", price: "₱3,300/day", status: "Available" },
+    { id: 10, name: "Audi A4", image: "images/audi.jpg", price: "₱7,000/day", status: "Available" }
 ];
 
 // Display Cars
@@ -27,7 +27,7 @@ function displayCars() {
             <p class="price">${car.price}</p>
         `;
         carList.appendChild(carDiv);
-    }); // ✅ Closing bracket added here!
+    });
 }
 
 // Open Car Details Modal
@@ -90,13 +90,11 @@ function submitRentalForm(event, carId) {
     // Hide rental form, show confirmation message
     document.getElementById("rental-form").style.display = "none";
     document.getElementById("rented-message").style.display = "block";
-    
-    // ✅ Use innerHTML to display multiline content properly
-    document.getElementById("rental-details").innerHTML = `
-        <p>Thank you, <strong>${fullName}</strong>! You have successfully rented the <strong>${car.name}</strong>.</p>
-        <p>📍 Pickup: <strong>${pickupLocation}</strong> on <strong>${pickupDate}</strong></p>
-        <p>📍 Return: <strong>${returnLocation}</strong> on <strong>${returnDate}</strong></p>
-        <p>📞 Contact: <strong>${contactNumber}</strong></p>
+    document.getElementById("rental-details").textContent = `
+        Thank you, ${fullName}! You have successfully rented the ${car.name}.
+        Pickup: ${pickupLocation} on ${pickupDate}.
+        Return: ${returnLocation} on ${returnDate}.
+        Contact: ${contactNumber}
     `;
 
     // Refresh the displayed status in modal
