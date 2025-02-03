@@ -1,4 +1,3 @@
-// Car data with image URLs and rental prices
 const cars = [
     { id: 1, name: "Toyota Corolla", image: "assets/img/toyota.jpg", price: "₱3,000/day", status: "Available" },
     { id: 2, name: "Honda Civic", image: "assets/img/honda.jpg", price: "₱3,500/day", status: "Available" },
@@ -12,7 +11,7 @@ const cars = [
     { id: 10, name: "Audi A4", image: "assets/img/audi.jpg", price: "₱7,000/day", status: "Available" }
 ];
 
-// Display Cars
+
 function displayCars() {
     const carList = document.getElementById("car-list");
     carList.innerHTML = "";
@@ -27,10 +26,10 @@ function displayCars() {
             <p class="price">${car.price}</p>
         `;
         carList.appendChild(carDiv);
-    }); // ✅ Missing closing bracket added here
+    }); 
 }
 
-// Open Car Details Modal
+
 function openCarModal(carId) {
     const car = cars.find(car => car.id === carId);
     if (car) {
@@ -39,7 +38,7 @@ function openCarModal(carId) {
         document.getElementById("car-status").textContent = `Status: ${car.status}`;
         document.getElementById("car-price").textContent = `Price: ${car.price}`;
 
-        // Show rent button only if available
+        
         if (car.status === "Available") {
             document.getElementById("rent-button").style.display = "inline-block";
             document.getElementById("rental-form").style.display = "none";
@@ -55,13 +54,13 @@ function openCarModal(carId) {
     }
 }
 
-// Close Car Details Modal
+
 function closeCarModal() {
     document.getElementById("car-modal").style.display = "none";
-    displayCars(); // Refresh the car list to update status
+    displayCars(); 
 }
 
-// Show the rental form
+
 function openRentalForm(carId) {
     document.getElementById("rent-button").style.display = "none";
     document.getElementById("rental-form").style.display = "block";
@@ -70,7 +69,7 @@ function openRentalForm(carId) {
     };
 }
 
-// Submit Rental Form
+
 function submitRentalForm(event, carId) {
     event.preventDefault();
 
@@ -84,14 +83,14 @@ function submitRentalForm(event, carId) {
     const pickupLocation = document.getElementById("pickup-location").value;
     const returnLocation = document.getElementById("return-location").value;
 
-    // Update car status
+    
     car.status = "Rented";
 
-    // Hide rental form, show confirmation message
+    
     document.getElementById("rental-form").style.display = "none";
     document.getElementById("rented-message").style.display = "block";
 
-    // ✅ Fix: Correct innerHTML structure
+    
     document.getElementById("rental-details").innerHTML = `
         <p>Thank you, ${fullName}! You have successfully rented the ${car.name}.</p>
         <p>Pickup: ${pickupLocation} on ${pickupDate}.</p>
@@ -99,12 +98,12 @@ function submitRentalForm(event, carId) {
         <p>Contact: ${contactNumber}</p>
     `;
 
-    // Refresh the displayed status in modal
+   
     document.getElementById("car-status").textContent = `Status: ${car.status}`;
 
-    // Update the main car list when modal is closed
-    setTimeout(closeCarModal, 2000); // Close modal after 2 seconds
+    
+    setTimeout(closeCarModal, 2000); 
 }
 
-// Initialize page
+
 displayCars();
