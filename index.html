@@ -15,7 +15,7 @@
         <section id="car-list"></section>
     </main>
 
-    <!-- Car Details Modal -->
+  
     <div id="car-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeCarModal()">&times;</span>
@@ -24,7 +24,7 @@
             <p id="car-status"></p>
             <p id="car-price"></p>
 
-            <!-- Rental Form -->
+       
             <form id="rental-form" onsubmit="submitRentalForm(event)" style="display: none;">
                 <input type="text" id="full-name" placeholder="Full Name" required>
                 <input type="text" id="contact-number" placeholder="Contact Number" required>
@@ -35,13 +35,13 @@
                 <button type="submit">Rent This Car</button>
             </form>
 
-            <!-- Rental Confirmation -->
+         
             <div id="rented-message" style="display: none;">
                 <h3>Car Rented Successfully!</h3>
                 <p id="rental-details"></p>
             </div>
 
-            <!-- Rent Button (Only one) -->
+            
             <button id="rent-button" onclick="openRentalForm()" style="display: none;">Rent This Car</button>
         </div>
     </div>
