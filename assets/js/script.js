@@ -7,7 +7,7 @@ const cars = [
     { id: 5, name: "Nissan Altima", image: "assets/img/nissan.jpg", price: "₱3,200/day", status: "Available" },
     { id: 6, name: "BMW 3 Series", image: "assets/img/bmw.jpg", price: "₱5,500/day", status: "Available" },
     { id: 7, name: "Mercedes-Benz C-Class", image: "assets/img/mercedes.jpg", price: "₱6,500/day", status: "Available" },
-    { id: 8, name: "Hyundai Elantra", image: "assets/img/hyundai.jpg", price: "₱2,900/day", status: "Available" },
+    { id: 8, name: "Hyundai Elantra", image: "assets/img/hundai.jpg", price: "₱2,900/day", status: "Available" },
     { id: 9, name: "Chevrolet Malibu", image: "assets/img/chevrolet.jpg", price: "₱3,300/day", status: "Available" },
     { id: 10, name: "Audi A4", image: "assets/img/audi.jpg", price: "₱7,000/day", status: "Available" }
 ];
@@ -27,6 +27,7 @@ function displayCars() {
             <p class="price">${car.price}</p>
         `;
         carList.appendChild(carDiv);
+    }); // ✅ Closing bracket added here!
 }
 
 // Open Car Details Modal
@@ -89,11 +90,13 @@ function submitRentalForm(event, carId) {
     // Hide rental form, show confirmation message
     document.getElementById("rental-form").style.display = "none";
     document.getElementById("rented-message").style.display = "block";
-    document.getElementById("rental-details").textContent = `
-        Thank you, ${fullName}! You have successfully rented the ${car.name}.
-        Pickup: ${pickupLocation} on ${pickupDate}.
-        Return: ${returnLocation} on ${returnDate}.
-        Contact: ${contactNumber}
+    
+    // ✅ Use innerHTML to display multiline content properly
+    document.getElementById("rental-details").innerHTML = `
+        <p>Thank you, <strong>${fullName}</strong>! You have successfully rented the <strong>${car.name}</strong>.</p>
+        <p>📍 Pickup: <strong>${pickupLocation}</strong> on <strong>${pickupDate}</strong></p>
+        <p>📍 Return: <strong>${returnLocation}</strong> on <strong>${returnDate}</strong></p>
+        <p>📞 Contact: <strong>${contactNumber}</strong></p>
     `;
 
     // Refresh the displayed status in modal
