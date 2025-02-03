@@ -1,6 +1,6 @@
 // Car data with image URLs and rental prices
 const cars = [
-    { id: 1, name: "Toyota Corolla", image: "img/toyota.jpg", price: "₱3,000/day", status: "Available" },
+    { id: 1, name: "Toyota Corolla", image: "assets/img/toyota.jpg", price: "₱3,000/day", status: "Available" }
     { id: 2, name: "Honda Civic", image: "img/honda.jpg", price: "₱3,500/day", status: "Available" },
     { id: 3, name: "Ford Focus", image: "img/ford.jpg", price: "₱2,800/day", status: "Available" },
     { id: 4, name: "Tesla Model 3", image: "img/tesla.jpg", price: "₱6,000/day", status: "Available" },
