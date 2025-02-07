@@ -6,20 +6,19 @@
 <div align="center">
   <a href="https://github.com/zyx-0314/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+    <img src="./assets/img/rentcar.jpg" alt="RENTCAR" width="130" height="100">
   </a>
-<!-- TODO: Change Title to the name of the title of your Project -->
+
   <h3 align="center">CAR RENTAL</h3>
 </div>
-<!-- TODO: Make a short description -->
+
 <div align="center">
 A car rental system is a software application that allows users to reserve, rent, and manage vehicles for short-term use, typically involving features like booking, payment processing, vehicle availability tracking, and rental agreements.
 </div>
 
 <br />
 
-<!-- TODO: Change the zyx-0314 into your github username  -->
-<!-- TODO: Change the WD-Template-Project into the same name of your folder -->
+
 ![](https://visit-counter.vercel.app/counter.png?page=MELLERZPEEK/AWD-Seatwork-1-2-FC-25)
 
 [![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
@@ -29,7 +28,6 @@ A car rental system is a software application that allows users to reserve, rent
 <br />
 <br />
 
-<!-- TODO: If you want to add more layers for your readme -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -57,19 +55,14 @@ A car rental system is a software application that allows users to reserve, rent
 
 ## Overview
 
-<!-- TODO: To be changed -->
-<!-- The following are just sample -->
 Description of the project in details.
 
 Guiding Question:
-- What is the project
-- Whats the purpose
-- What are key components
-- What technology used and how it is used
+-Car Rental System
+-To rent a Car
+
 
 ### Key Components
-<!-- TODO: List of Key Components -->
-<!-- The following are just sample -->
 - MultiPage Website/Single Page Website
 - Parallax transition
 - Transactional
