@@ -55,8 +55,10 @@ A car rental system is a software application that allows users to reserve, rent
 ## Overview
 
 Description of the project in details.
--Car Rental System
--To rent a Car
+
+- Car Rental System
+
+- To rent a Car
 
 
 ### Key Components
