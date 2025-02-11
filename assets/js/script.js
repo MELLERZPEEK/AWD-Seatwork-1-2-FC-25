@@ -1,14 +1,16 @@
 let cars = JSON.parse(localStorage.getItem("cars")) || [
     { id: 1, name: "Toyota Corolla", image: "assets/img/toyota.jpg", price: "₱3,000/day", status: "Available" },
     { id: 2, name: "Honda Civic", image: "assets/img/honda.jpg", price: "₱3,500/day", status: "Available" },
-    { id: 3, name: "Ford Mustang", image: "assets/img/mustang.jpg", price: "₱8,000/day", status: "Available" },
-    { id: 4, name: "Tesla Model 3", image: "assets/img/tesla.jpg", price: "₱10,000/day", status: "Available" },
-    { id: 5, name: "Nissan GT-R", image: "assets/img/gtr.jpg", price: "₱12,000/day", status: "Available" },
-    { id: 6, name: "Mazda RX-7", image: "assets/img/rx7.jpg", price: "₱9,000/day", status: "Available" },
-    { id: 7, name: "Subaru WRX STI", image: "assets/img/wrx.jpg", price: "₱7,500/day", status: "Available" },
-    { id: 8, name: "Chevrolet Camaro", image: "assets/img/camaro.jpg", price: "₱8,500/day", status: "Available" },
-    { id: 9, name: "Lamborghini Huracán", image: "assets/img/lamborghini.jpg", price: "₱50,000/day", status: "Available" },
-    { id: 10, name: "Porsche 911", image: "assets/img/porsche.jpg", price: "₱45,000/day", status: "Available" }
+    { id: 3, name: "Ford Focus", image: "assets/img/ford.jpg", price: "₱2,800/day", status: "Available" },
+    { id: 4, name: "Tesla Model 3", image: "assets/img/tesla.jpg", price: "₱6,000/day", status: "Available" },
+    { id: 5, name: "Nissan Altima", image: "assets/img/nissan.jpg", price: "₱3,200/day", status: "Available" },
+    { id: 6, name: "BMW 3 Series", image: "assets/img/bmw.jpg", price: "₱5,500/day", status: "Available" },
+    { id: 7, name: "Mercedes-Benz C-Class", image: "assets/img/mercedes.jpg", price: "₱6,500/day", status: "Available" },
+    { id: 8, name: "Hyundai Elantra", image: "assets/img/hundai.jpg", price: "₱2,900/day", status: "Available" },
+    { id: 9, name: "Chevrolet Malibu", image: "assets/img/chevrolet.jpg", price: "₱3,300/day", status: "Available" },
+    { id: 10, name: "Audi A4", image: "assets/img/audi.jpg", price: "₱7,000/day", status: "Available" }
+];
+
 ];
 
 let rentals = JSON.parse(localStorage.getItem("rentals")) || {};
