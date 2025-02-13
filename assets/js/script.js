@@ -14,7 +14,6 @@ let cars = JSON.parse(localStorage.getItem("cars")) || [
 
 let rentals = JSON.parse(localStorage.getItem("rentals")) || {};
 
-
 function saveToLocalStorage() {
     localStorage.setItem("cars", JSON.stringify(cars));
     localStorage.setItem("rentals", JSON.stringify(rentals));
@@ -23,11 +22,14 @@ function saveToLocalStorage() {
 
 function updateCarAvailability() {
     const now = new Date();
+    console.log("Updating car availability...");
 
     cars.forEach(car => {
         if (car.status === "Rented" && rentals[car.id]) {
             const returnDate = new Date(rentals[car.id].returnDate);
+            console.log(`Checking return date for ${car.name}: ${returnDate}`);
             if (now >= returnDate) {
+                console.log(`${car.name} is now available.`);
                 car.status = "Available";
                 delete rentals[car.id];
             }
@@ -55,6 +57,8 @@ function displayCars() {
         `;
         carList.appendChild(carDiv);
     });
+
+    console.log("Displayed cars:", cars);
 }
 
 
@@ -99,7 +103,7 @@ function openRentalForm(carId) {
     };
 }
 
-// Handle rental form submission
+
 function submitRentalForm(event, carId) {
     event.preventDefault();
 
@@ -113,9 +117,7 @@ function submitRentalForm(event, carId) {
     const pickupLocation = document.getElementById("pickup-location").value;
     const returnLocation = document.getElementById("return-location").value;
 
-
     car.status = "Rented";
-
 
     rentals[carId] = {
         fullName,
@@ -139,10 +141,9 @@ function submitRentalForm(event, carId) {
     document.getElementById("car-status").innerHTML = `Status: <strong style="color:red;">Rented</strong>`;
     document.getElementById("car-status").innerHTML += `<br>Return Date: <strong>${returnDate}</strong>`;
 
-    setTimeout(() => {
-        closeCarModal();
-        displayCars();
-    }, 2000);
+    
+    displayCars();
+    closeCarModal();
 }
 
 
