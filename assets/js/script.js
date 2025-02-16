@@ -22,28 +22,23 @@ function saveToLocalStorage() {
 
 function updateCarAvailability() {
     const now = new Date();
-    console.log("Updating car availability...");
-
     cars.forEach(car => {
         if (car.status === "Rented" && rentals[car.id]) {
             const returnDate = new Date(rentals[car.id].returnDate);
-            console.log(`Checking return date for ${car.name}: ${returnDate}`);
             if (now >= returnDate) {
-                console.log(`${car.name} is now available.`);
                 car.status = "Available";
                 delete rentals[car.id];
             }
         }
     });
-
     saveToLocalStorage();
 }
 
 
 function displayCars() {
     updateCarAvailability();
-
     const carList = document.getElementById("car-list");
+    if (!carList) return;
     carList.innerHTML = "";
 
     cars.forEach(car => {
@@ -57,57 +52,45 @@ function displayCars() {
         `;
         carList.appendChild(carDiv);
     });
-
-    console.log("Displayed cars:", cars);
 }
 
 
 function openCarModal(carId) {
-    const car = cars.find(car => car.id === carId);
+    const car = cars.find(c => c.id === carId);
     if (!car) return;
-
+    
     document.getElementById("car-modal-image").src = car.image;
     document.getElementById("car-name").textContent = car.name;
     document.getElementById("car-price").textContent = `Price: ${car.price}`;
-
+    document.getElementById("car-status").innerHTML = `Status: <strong>${car.status}</strong>`;
+    
     if (car.status === "Rented" && rentals[carId]) {
-        document.getElementById("car-status").innerHTML = `Status: <strong style="color:red;">Rented</strong>`;
         document.getElementById("car-status").innerHTML += `<br>Return Date: <strong>${rentals[carId].returnDate}</strong>`;
         document.getElementById("rent-button").style.display = "none";
     } else {
-        document.getElementById("car-status").innerHTML = `Status: ${car.status}`;
-        document.getElementById("rent-button").style.display = "inline-block";
+        document.getElementById("rent-button").style.display = "block";
+        document.getElementById("rent-button").onclick = () => openRentalForm(carId);
     }
-
+    
     document.getElementById("rental-form").style.display = "none";
     document.getElementById("rented-message").style.display = "none";
     document.getElementById("car-modal").style.display = "flex";
-
-    document.getElementById("rent-button").onclick = function () {
-        openRentalForm(carId);
-    };
 }
-
 
 function closeCarModal() {
     document.getElementById("car-modal").style.display = "none";
     displayCars();
 }
 
-
 function openRentalForm(carId) {
     document.getElementById("rent-button").style.display = "none";
     document.getElementById("rental-form").style.display = "block";
-    document.getElementById("rental-form").onsubmit = function (event) {
-        submitRentalForm(event, carId);
-    };
+    document.getElementById("rental-form").onsubmit = (event) => submitRentalForm(event, carId);
 }
-
 
 function submitRentalForm(event, carId) {
     event.preventDefault();
-
-    const car = cars.find(car => car.id === carId);
+    const car = cars.find(c => c.id === carId);
     if (!car) return;
 
     const fullName = document.getElementById("full-name").value;
@@ -116,20 +99,11 @@ function submitRentalForm(event, carId) {
     const returnDate = document.getElementById("return-datetime").value;
     const pickupLocation = document.getElementById("pickup-location").value;
     const returnLocation = document.getElementById("return-location").value;
-
+    
     car.status = "Rented";
-
-    rentals[carId] = {
-        fullName,
-        contactNumber,
-        pickupDate,
-        returnDate,
-        pickupLocation,
-        returnLocation
-    };
-
+    rentals[carId] = { fullName, contactNumber, pickupDate, returnDate, pickupLocation, returnLocation };
     saveToLocalStorage();
-
+    
     document.getElementById("rental-form").style.display = "none";
     document.getElementById("rented-message").style.display = "block";
     document.getElementById("rental-details").innerHTML = `
@@ -137,12 +111,7 @@ function submitRentalForm(event, carId) {
         Pickup: ${pickupLocation} on ${pickupDate}.
         Return: ${returnLocation} on ${returnDate}.
         Contact: ${contactNumber}`;
-
-    document.getElementById("car-status").innerHTML = `Status: <strong style="color:red;">Rented</strong>`;
-    document.getElementById("car-status").innerHTML += `<br>Return Date: <strong>${returnDate}</strong>`;
-
     
-    displayCars();
     closeCarModal();
 }
 
